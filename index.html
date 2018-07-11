@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>UserAgent</title>
+    <script src="./dist/index.js" type="text/javascript"></script>
+    <style>
+      td { height: 50px; text-align: center; font-size: 20px; }
+      .green { background-color: #39b54a; }
+      .red   { background-color: #ab2a18; }
+      .green:after, .red:after { color: #fff; font-weight: bold; }
+      .green:after  { content: '○'; }
+      .red:after    { content: '×'; }
+    </style>
+  </head>
+  <body>
+    <h1>UserAgent判定</h1>
+
+    <h2>ブラウザ</h2>
+    <table>
+      <tr>
+        <th width="100">IE</th>
+        <th width="100">Edge</th>
+        <th width="100">Chrome</th>
+        <th width="100">Safari</th>
+        <th width="100">Firefox</th>
+        <th width="100">Opera</th>
+      </tr>
+      <tr>
+        <td id="ie"></td>
+        <td id="edge"></td>
+        <td id="chrome"></td>
+        <td id="safari"></td>
+        <td id="firefox"></td>
+        <td id="opera"></td>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+      var userAgent = new window.UserAgent()
+      function addClass(el, judge) {
+        el.classList.add(judge ? 'green' : 'red')
+      }
+    </script>
+    <script type="text/javascript">
+      addClass(document.getElementById('ie'),       userAgent.isIE)
+      addClass(document.getElementById('edge'),     userAgent.isEdge)
+      addClass(document.getElementById('chrome'),   userAgent.isChrome)
+      addClass(document.getElementById('safari'),   userAgent.isSafari)
+      addClass(document.getElementById('firefox'),  userAgent.isFirefox)
+      addClass(document.getElementById('opera'),    userAgent.isOpera)
+    </script>
+
+    <h2>デバイス</h2>
+    <table>
+      <tr>
+        <th width="150">iPhone</th>
+        <th width="150">iPad</th>
+        <th width="150">Android</th>
+        <th width="150">AndroidMobile</th>
+        <th width="150">AndroidTablet</th>
+      </tr>
+      <tr>
+        <td id="iphone"></td>
+        <td id="ipad"></td>
+        <td id="android"></td>
+        <td id="androidMobile"></td>
+        <td id="androidTablet"></td>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+      addClass(document.getElementById('iphone'),         userAgent.isiPhone)
+      addClass(document.getElementById('ipad'),           userAgent.isiPad)
+      addClass(document.getElementById('android'),        userAgent.isAndroid)
+      addClass(document.getElementById('androidMobile'),  userAgent.isAndroidMobile)
+      addClass(document.getElementById('androidTablet'),  userAgent.isAndroidTablet)
+    </script>
+
+    <h3>アプリ</h3>
+    <table>
+      <tr>
+        <th>PRESS</th>
+      </tr>
+      <tr>
+        <td id="press"></td>
+      </tr>
+    </table>
+    <script type="text/javascript">
+      addClass(document.getElementById('press'), userAgent.isPress)
+    </script>
+
+    <h3>種別</h3>
+    <table>
+      <tr>
+        <th width="100">PC</th>
+        <th width="100">Mobile</th>
+      </tr>
+      <tr>
+        <td id="pc"></td>
+        <td id="mobile"></td>
+      </tr>
+    </table>
+    <script type="text/javascript">
+      addClass(document.getElementById('pc'),     userAgent.isPC)
+      addClass(document.getElementById('mobile'), userAgent.isMobile)
+    </script>
+  </body>
+</html>
