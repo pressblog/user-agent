@@ -9,7 +9,7 @@ module.exports = {
     library: 'UserAgent',
     libraryTarget: 'umd'
   },
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
