@@ -63,6 +63,9 @@ class UserAgent {
   get isMobile()        { return this.isiPhone || this.isAndroidMobile || this.isApp }
 }
 
-if (window) window.UserAgent = UserAgent
+if (typeof window != 'undefined' && window.Vue) {
+  window.UserAgent = new UserAgent()
+}
 
-export default UserAgent
+module.exports = new UserAgent()
+module.exports.default = module.exports
