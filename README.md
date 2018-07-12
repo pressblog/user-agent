@@ -2,6 +2,8 @@
 
 User Agentからブラウザとデバイスを判定する
 
+![プレビュー](https://github.com/pressblog/user-agent/blob/master/preview.png)
+
 # テスト
 
 `index.html`を各ブラウザで開いてください
