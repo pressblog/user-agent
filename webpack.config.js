@@ -5,7 +5,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'index.js'
+    filename: 'index.js',
+    library: 'UserAgent',
+    libraryTarget: 'umd'
   },
   mode: 'development',
   module: {

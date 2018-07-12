@@ -67,5 +67,4 @@ if (typeof window != 'undefined' && window.Vue) {
   window.UserAgent = new UserAgent()
 }
 
-module.exports = new UserAgent()
-module.exports.default = module.exports
+export default new UserAgent()
