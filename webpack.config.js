@@ -1,11 +1,14 @@
 var path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'index': './src/index.js',
+    'vue/index': './src/vue/index.js'
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'index.js',
+    filename: '[name].js',
     library: 'UserAgent',
     libraryTarget: 'umd'
   },
