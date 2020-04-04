@@ -63,4 +63,4 @@ class UserAgent {
   get isMobile()        { return this.isiPhone || this.isAndroidMobile || this.isApp }
 }
 
-export default new UserAgent()
+module.exports = new UserAgent();
